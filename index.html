@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <body style="background-color:aquamarine;">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bellybutton Biodiversity</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <style>
-    select{color: coral;}
-    h5{color: darkblue;}
-  </style>
+  <link 
+      rel="stylesheet" 
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      />
+  <link rel="stylesheet" href="plotly/static/css/style.css">
 </head>
 
 <body>
-
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1 style = "background-color: chartreuse;">Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p style="color:black"><b>Use the interactive charts below to explore the dataset</b></p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-2">
         <div class="well">
-          <h5>Test Subject ID No.:</h5>
-          <!-- <select id="selDataset"></select> -->
+          <h5>Start by selecting a Test Subject ID Number from the dropdown menu below. All of the information and graphs will
+            automatically update to reflect any changes.
+          </h5>
+          <h5 style="color: black;">Test Subject ID No.:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
         <div class="panel panel-primary">
@@ -35,7 +36,13 @@
           </div>
           <div id="sample-metadata" class="panel-body"></div>
         </div>
+        <div>
+          <h5 style="color: gray;">An Operational Taxonomic Unit (<b>OTU</b>) refers to clusters of organisms, grouped by DNA
+          sequence similarity of a specific taxonomic maker gene.</h5>
+          <h5 style="color: gray;"><b>Hint!</b> Hovering over the data points on the graphs will reveal extra information.</h5>
+        </div>
       </div>
+ <!------------------ Graphs ------------------>      
       <div class="col-md-5">
         <div id="bar"></div>
       </div>
@@ -45,14 +52,14 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div id="bubble"></div>
+        <div id="bubble" align='center'></div>
       </div>
     </div>
   </div>
-
+ <!------------------ Data ------------------>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src = "charts.js"></script>
+  <script src="plotly/static/js/charts.js"></script>
 
 </body>
 
